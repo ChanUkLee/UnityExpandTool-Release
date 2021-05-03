@@ -1,0 +1,16 @@
+{
+    "name": "UnityExpandTool.RuntimeTest",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f94fa4b79e605479ebd4ac47f36f5a89"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
