@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEditor;
-
+using UnityEditor.SceneManagement;
 
 namespace UnityExpandTool
 {
     public class ExpandToolWindow : EditorWindow
     {
-        Mail _mail = null;
-
         [MenuItem("Window/UnityExpandTool/Settings")]
         static void View()
         {
@@ -20,23 +17,64 @@ namespace UnityExpandTool
             window.titleContent = new GUIContent("ExpandTool", texture);
         }
 
-        void Init()
+        [MenuItem("Window/UnityExpandTool/UnityExpandTool")]
+        static void CreateToolInstance()
         {
-            _mail = Resources.Load<ScriptableObject>("ExpandTool/Mail") as Mail;
+            var prefab = Resources.Load<GameObject>("Prefabs/ExpandTool");
+            var tool = FindObjectsOfType<ExpandTool>();
+            if (tool == null)
+            {
+                PrefabUtility.InstantiatePrefab(prefab);
+                EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+                EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene());
+            }
+            else
+            {
+                Debug.LogWarning("exists tool");
+            }
+        }
+
+        [MenuItem("Window/UnityExpandTool/Mail Setting")]
+        static void CreateMailInstance()
+        {
+            CreateEncryptInstance();
+
+            Directory.CreateDirectory(Path.GetDirectoryName(Mail.ASSET_PATH));
+
+            var asset = AssetDatabase.LoadAssetAtPath<Mail>($"{Mail.ASSET_PATH}");
+
+            if (asset == null)
+            {
+                asset = CreateInstance<Mail>();
+                AssetDatabase.CreateAsset(asset, $"{Mail.ASSET_PATH}");
+                AssetDatabase.Refresh();
+            }
+
+            Selection.activeObject = asset;
+        }
+
+        static void CreateEncryptInstance()
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(Encrypt.ASSET_PATH));
+
+            var asset = AssetDatabase.LoadAssetAtPath<Encrypt>($"{Encrypt.ASSET_PATH}");
+
+            if (asset == null)
+            {
+                asset = CreateInstance<Encrypt>();
+                AssetDatabase.CreateAsset(asset, $"{Encrypt.ASSET_PATH}");
+
+                asset.Generate();
+                EditorUtility.SetDirty(asset);
+                AssetDatabase.SaveAssets();
+
+                AssetDatabase.Refresh();
+            }
         }
 
         void OnGUI()
         {
             
-        }
-
-        void DrawMail()
-        {
-            GUILayout.BeginVertical();
-            GUILayout.BeginHorizontal();
-            _mail.SenderName = GUILayout.TextField(_mail.SenderName);
-            GUILayout.EndHorizontal();
-            GUILayout.EndVertical();
         }
     }
 }

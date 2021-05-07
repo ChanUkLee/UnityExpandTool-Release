@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEditor;
-using System.Security.Cryptography;
 
 namespace UnityExpandTool
 {

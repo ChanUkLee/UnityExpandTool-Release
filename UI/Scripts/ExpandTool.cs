@@ -77,6 +77,23 @@ namespace UnityExpandTool
             DontDestroyOnLoad(gameObject);
         }
 
+        private void Update()
+        {
+            if (Input.touchCount > 5 || Input.GetKeyDown(KeyCode.F7))
+            {
+                Open();
+            }
+        }
+
+        private static string _targetMail = string.Empty;
+
+        public static string TargetMail { get => _targetMail; set => _targetMail = value; }
+
+        public static void Build()
+        {
+            Instance.Initialize();
+        }
+
         public void OnClose()
         {
             _root.SetActive(false);
@@ -84,7 +101,15 @@ namespace UnityExpandTool
 
         public static void Open()
         {
-            Instance._root.SetActive(true);
+            if (!Instance._root.activeSelf)
+            {
+                Instance._root.SetActive(true);
+
+                if (!Instance._consoleView.gameObject.activeSelf
+                   && !Instance._commandView.gameObject.activeSelf
+                   && !Instance._systemView.gameObject.activeSelf)
+                    Instance._consoleView.gameObject.SetActive(true);
+            }
         }
 
         public static void Close()

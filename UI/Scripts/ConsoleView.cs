@@ -220,7 +220,7 @@ namespace UnityExpandTool
             {
                 try
                 {
-                    await Mail.SendAsync("chanuklee0227@gmail.com", "Log share", new System.Net.Mail.Attachment(ExpandTool.Instance.Log.FilePath));
+                    await Mail.SendAsync(ExpandTool.TargetMail, "Log share", new System.Net.Mail.Attachment(ExpandTool.Instance.Log.FilePath));
                     break;
                 }
                 catch (IOException)

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: -83260243, guid: 84711afd407524cf6acba8cf5b604244, type: 3}
   m_Name: Mail
   m_EditorClassIdentifier: 
-  _senderName: 42a146c354c4c94e7721b71b7935b9d1
-  _senderMail: e0abbfd4ea86a7659755f40ab2378836487215f356670fd31077789d9039701c
-  _password: be058774f13045f29754b103e2c087dba63d80a126fce1ce45c0ab1c4ae83bc9
-  _domain: 983cef83fcd81974407e720fabfd2a1f
-  _port: b6ef31955c78d01742f6870ee9d38907
+  _senderName: 
+  _senderMail: 
+  _password: 
+  _domain: 
+  _port: 

@@ -7,9 +7,9 @@ public class ExampleScene : MonoBehaviour
 
     private void Awake()
     {
-        //LoadTest();
+        ExpandTool.Build();
 
-        ExpandTool.Open();
+        ExpandTool.TargetMail = "sample@gmail.com";
 
         ExpandTool.AppendFunc("New Log", () =>
         {
@@ -37,16 +37,5 @@ public class ExampleScene : MonoBehaviour
 
             Debug.Log($"{origin}/{decrypt}");
         });
-    }
-
-    /// <summary>
-    /// http://www.softwaretestingstuff.com/2011/09/performance-testing-vs-load-testing-vs.html
-    /// </summary>
-    private void LoadTest()
-    {
-        for (int i = 0; i < 100000; i++)
-        {
-            Debug.Log($"New Log #{i}");
-        }
     }
 }
