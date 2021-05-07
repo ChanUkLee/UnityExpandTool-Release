@@ -6,7 +6,11 @@ Just test with 2020.3.1f.
 
 ## Usage
 
-![prefab_location](https://github.com/ChanUkLee/UnityExpandTool/blob/main/Images/how_to_work.png)
+Windows > UnityExpandTool > UnityExpandTool
+
+will be create expandtool instance active scene
+
+![prefab_location](https://github.com/ChanUkLee/UnityExpandTool/blob/main/Images/windows_menu.png)
 
 or
 
@@ -17,7 +21,7 @@ public class UnityExpandTool_Sample : MonoBehaviour
 {
     private void Open()
     {
-        ExpandTool.Open();
+        ExpandTool.Build();
     }
 }
 ```
@@ -27,6 +31,28 @@ public class UnityExpandTool_Sample : MonoBehaviour
 ![log screenshot](https://github.com/ChanUkLee/UnityExpandTool/blob/main/Images/logviewer.png)
 
 ![log_detail screenshot](https://github.com/ChanUkLee/UnityExpandTool/blob/main/Images/logviewer_detail.png)
+
+You can share log by email. But you need setting sender and receiver.
+
+Setting sender
+
+Windows > UnityExpandTool > Mail Setting
+
+![log_detail screenshot](https://github.com/ChanUkLee/UnityExpandTool/blob/main/Images/settings_mail.png)
+
+Setting receiver
+
+```
+using UnityExpandTool;
+
+public class UnityExpandTool_Log_Sample : MonoBehaviour
+{
+    private void ShareInit()
+    {
+        ExpandTool.TargetMail = "sample@gmail.com";
+    }
+}
+```
 
 ## Command
 
