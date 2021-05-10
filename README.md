@@ -10,7 +10,7 @@ Windows > UnityExpandTool > UnityExpandTool
 
 will be create expandtool instance active scene
 
-![prefab_location](https://github.com/ChanUkLee/UnityExpandTool/blob/main/Images/windows_menu.png)
+![prefab_location](https://github.com/ChanUkLee/ReadMe-Image/blob/master/UnityExpandTool/windows_menu.png)
 
 or
 
@@ -28,9 +28,9 @@ public class UnityExpandTool_Sample : MonoBehaviour
 
 ## Log
 
-![log screenshot](https://github.com/ChanUkLee/UnityExpandTool/blob/main/Images/logviewer.png)
+![log screenshot](https://github.com/ChanUkLee/ReadMe-Image/blob/master/UnityExpandTool/logviewer.png)
 
-![log_detail screenshot](https://github.com/ChanUkLee/UnityExpandTool/blob/main/Images/logviewer_detail.png)
+![log_detail screenshot](https://github.com/ChanUkLee/ReadMe-Image/blob/master/UnityExpandTool/logviewer_detail.png)
 
 You can share log by email. But you need setting sender and receiver.
 
@@ -38,7 +38,7 @@ Setting sender
 
 Windows > UnityExpandTool > Mail Setting
 
-![log_detail screenshot](https://github.com/ChanUkLee/UnityExpandTool/blob/main/Images/settings_mail.png)
+![log_detail screenshot](https://github.com/ChanUkLee/ReadMe-Image/blob/master/UnityExpandTool/settings_mail.png)
 
 Setting receiver
 
@@ -56,7 +56,7 @@ public class UnityExpandTool_Log_Sample : MonoBehaviour
 
 ## Command
 
-![command screenshot](https://github.com/ChanUkLee/UnityExpandTool/blob/main/Images/command.png)
+![command screenshot](https://github.com/ChanUkLee/ReadMe-Image/blob/master/UnityExpandTool/command.png)
 
 You can use command like this.
 
@@ -89,7 +89,7 @@ public class UnityExpandTool_Command_Sample : MonoBehaviour
 
 ## System
 
-![system screenshot](https://github.com/ChanUkLee/UnityExpandTool/blob/main/Images/infos.png)
+![system screenshot](https://github.com/ChanUkLee/ReadMe-Image/blob/master/UnityExpandTool/infos.png)
 
 You can use custom info like this.
 
